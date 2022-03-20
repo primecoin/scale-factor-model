@@ -4,7 +4,7 @@ if __name__=="__main__":
     headers = {"content-type": "application/json"}
     url = "https://explorer.primecoin.net/api/rest/blockchain/getblock/"
     Count = {}
-    for i in range(0, 15) :
+    for i in range(0, 17) :
         Count[i] = 0
     for i in range(4651555, 4651565): #4651595
         response = requests.get(url + str(i), headers = headers).json()
