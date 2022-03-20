@@ -3,9 +3,9 @@ import requests
 if __name__=="__main__":
     headers = {"content-type": "application/json"}
     url = "https://explorer.primecoin.net/api/rest/blockchain/getblock/"
-    Count = {}
+    count = {}
     for i in range(0, 17) :
-        Count[i] = 0
+        count[i] = 0
     for i in range(4651555, 4651565): #4651595
         response = requests.get(url + str(i), headers = headers).json()
         difficulty = response["result"]["difficulty"]
@@ -14,8 +14,8 @@ if __name__=="__main__":
         print(chainLength)
         print(difficulty)
         if (chainLength == int(difficulty)) :
-            Count[chainLength] += 1 / (int(difficulty) + 1 - difficulty)
+            count[chainLength] += 1 / (int(difficulty) + 1 - difficulty)
         else:
-            Count[chainLength] += 1
-    print(Count)
+            count[chainLength] += 1
+    print(count)
     
