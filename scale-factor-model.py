@@ -14,7 +14,7 @@ if __name__=="__main__":
         print(chainLength)
         print(difficulty)
         if (chainLength == int(difficulty)) :
-            Count[10] += 1 / (int(difficulty) + 1 - difficulty)
+            Count[chainLength] += 1 / (int(difficulty) + 1 - difficulty)
         else:
             Count[chainLength] += 1
     print(Count)
